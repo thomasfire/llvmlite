@@ -1090,7 +1090,7 @@ class Argument(_BaseArgument):
     def __str__(self):
         attrs = self.attributes._to_list()
         if attrs:
-            return "{0} {1} {2}".format(self.type, ' '.join(attrs),
+            return "{0} {1} ({2})".format(self.type, ' '.join(attrs),
                                         self.get_reference())
         else:
             return "{0} {1}".format(self.type, self.get_reference())
@@ -1104,7 +1104,7 @@ class ReturnValue(_BaseArgument):
     def __str__(self):
         attrs = self.attributes._to_list()
         if attrs:
-            return "{0} {1}".format(' '.join(attrs), self.type)
+            return "{0} ({1})".format(' '.join(attrs), self.type)
         else:
             return str(self.type)
 
