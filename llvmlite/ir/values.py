@@ -1069,7 +1069,7 @@ class ArgumentAttributes(AttributeSet):
     def __str__(self):
         ss = super(self).__str__()
         print("arg attrs ", ss)
-        raise Exception(ss)
+        #raise Exception(ss)
         return ss
 
 
