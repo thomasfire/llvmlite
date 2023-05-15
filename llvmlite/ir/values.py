@@ -976,7 +976,7 @@ class Function(GlobalValue):
         args = ", ".join(str(a) for a in self.args)
         name = self.get_reference()
         attrs = self.attributes
-        attrs = ' {}'.format(attrs) if attrs else ''
+        attrs = ' ({})'.format(attrs) if attrs else ''
         if any(self.args):
             vararg = ', ...' if self.ftype.var_arg else ''
         else:
@@ -1090,7 +1090,7 @@ class Argument(_BaseArgument):
     def __str__(self):
         attrs = self.attributes._to_list()
         if attrs:
-            return "{0} {1} ({2})".format(self.type, ' '.join(attrs),
+            return "{0} ({1}) ({2})".format(self.type, ' '.join(attrs),
                                         self.get_reference())
         else:
             return "{0} {1}".format(self.type, self.get_reference())
