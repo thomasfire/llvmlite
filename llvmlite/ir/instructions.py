@@ -133,7 +133,7 @@ class CallInstr(Instruction):
     def _descr(self, buf, add_metadata):
         def descr_arg(i, a):
             if i in self.arg_attributes:
-                attrs = ' '.join(self.arg_attributes[i]._to_list()) + ' '
+                attrs = ' '.join(map(lambda x: "{}({})".format(x, a.type), self.arg_attributes[i]._to_list())) + ' '
                 print(attrs)
             else:
                 attrs = ''
